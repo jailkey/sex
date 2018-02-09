@@ -5,7 +5,7 @@ is an easy method to style your markup in a human readable way, by using custom 
 The new attributes are:
 * **is** - describes a component
   - this attribute can only contain one component name. 
-  - To extend an existing component use a hyphen ("component-supercomponent") an make your component extandable.
+  - To extend an existing component use a hyphen ("component-supercomponent") and make your component extandable.
 * **has** - describes special modifiers which overwrites the default style 
   - this attribute can contain a list of properties seperated by spaces.
 * **currently** - describes the current state of the module 
