@@ -24,6 +24,7 @@ If the attributes are implemented, we can use it in this way:
 ## CSS implementation
 To implement it in simple, plain CSS we need to use custom properties and we have to define some default names for them:
 
+
 ```css
 /*
     set default values
