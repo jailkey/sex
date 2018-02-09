@@ -1,5 +1,5 @@
 # **S**emantical **E**lement e**X**tension
-is an easy method to style your markup in a human readable way, by using custom attributes, attribute selectors and custome properties.
+is an easy method to style your markup in a human readable way, by using custom attributes, attribute selectors and custom properties.
 
 ## Attributes
 The new attributes are:
