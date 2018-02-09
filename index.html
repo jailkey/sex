@@ -1,0 +1,80 @@
+<html>
+
+<head>
+    <style>
+         :root,
+        [is="theme"],
+        [is*="-theme"] {
+            --default-button-color: red;
+        }
+        
+        [is*="-component"],
+        [is="component"] {
+            /*default color*/
+            --background-color: var(--default-button-color);
+            background: var(--background-color);
+            width: 50%;
+            height: 20%;
+            transition: transform .5s;
+        }
+        /** define states and behaviours **/
+        
+        [is="component"][currently~="loading"]::before {
+            content: '';
+            display: block;
+            color: #fff;
+            animation-name: loadingDotts;
+            animation-duration: 1s;
+            transition: all 0.5s;
+        }
+        /*define action */
+        
+        [is*="-component"][on~="touch->grow"]:hover,
+        [is="component"][on~="touch->grow"]:hover {
+            transform: scale3d(1.2, 1.2, 1.2);
+        }
+        /* extends component*/
+        
+        [is="custom-component"] {
+            --background-color: blue;
+        }
+        
+        [is="another-component"] {
+            --background-color: black;
+            height: 20px;
+            width: 20px;
+        }
+        
+        @keyframes loadingDotts {
+            0% {
+                content: ''
+            }
+            25% {
+                content: '.'
+            }
+            50% {
+                content: '..'
+            }
+            100% {
+                content: '...'
+            }
+        }
+        /** to set global properties set the custome properties **/
+        
+        [has="green-background"] {
+            --background-color: green;
+        }
+    </style>
+</head>
+
+<body theme="default">
+    <div is="component">
+        <div is="component" has="green-background" currently="loading">
+            <div is="another-component" on="touch->grow"></div>
+        </div>
+    </div>
+    <div is="component" has="green-background"></div>
+    <div is="custom-component"></div>
+</body>
+
+</html>
