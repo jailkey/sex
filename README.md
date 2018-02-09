@@ -30,7 +30,6 @@ To implement it in simple, plain CSS we need to use custom properties and we hav
 * --font
 
 ### Set default values
-if we have diffrent themes we can overwrite the default values
 ```css
     :root {
         --primary-color: green;
@@ -38,6 +37,8 @@ if we have diffrent themes we can overwrite the default values
         --default-component-background: #eee;
     }
 ```
+*if we have diffrent themes we can overwrite the default values*
+
 
 ### Define a component
 if you want an extandable component add also the 'extandable' selector ([is*="-component"]):
@@ -56,6 +57,7 @@ if you want an extandable component add also the 'extandable' selector ([is*="-c
     }
 ```
 
+
 ### Define component states
 use the ~= operator to allow a list of states
 ```css
@@ -65,14 +67,16 @@ use the ~= operator to allow a list of states
     }
 ```
 
+
 ### Define component behaviour
 use an arrow "->" between event and action to make it more semantic 
 ```css
     [is="component"][on~="touch->grow"]:hover,
-    [is*="component"][on~="touch->grow"]:hover{
+    [is*="-component"][on~="touch->grow"]:hover{
         transform: scale3d(1.2, 1.2, 1.2);
     }
 ```
+
 
 ### Define modifiers
 its importent to use/overwrite the default custome properties
@@ -85,6 +89,7 @@ its importent to use/overwrite the default custome properties
         --borders : 1px var(--secondary-color) solid;
     }
 ```
+
 
 ## Order
 It is import to keep the order of the definitions, otherwise you get into problems with the cascade:
